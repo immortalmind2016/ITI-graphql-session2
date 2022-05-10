@@ -1,0 +1,39 @@
+type User {
+  id: ID
+  name: String
+}
+type Post {
+  id: ID
+  title: String
+  user: User
+}
+
+type Comment {
+  text: String
+}
+type Movie {
+  title: String
+  producer: String
+}
+
+type Profile {
+  id: ID
+  name: String
+}
+input PostInput {
+  title: String
+  userId: String
+}
+
+type Query {
+  posts: [Post]
+  comments(postId: String!): [Comment]
+  movies: [Movie]
+  welcomeMessage: String
+  myProfile: Profile
+}
+
+type Mutation {
+  signUp(name: String): User
+  createPost(input: PostInput): Post
+}
