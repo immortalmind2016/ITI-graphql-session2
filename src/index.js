@@ -7,7 +7,7 @@ const { UserDataSource } = require("./datasource/user");
 const { PostDataSource } = require("./datasource/post");
 
 mongoose.connect(
-  "mongodb+srv://immortalmind:0115120323a@cluster0.24rs5.mongodb.net/ITI?retryWrites=true&w=majority"
+ process.env.MONGO_URI
 );
 mongoose.set("debug", true);
 
